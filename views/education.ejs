@@ -1,0 +1,332 @@
+<%- include('./partials/header.ejs') %>
+<style>
+    body{
+        background: #000;
+        color: white;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    .cap{
+        animation-name: anime;
+        animation-duration: 1.4s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+    .svg{
+        height: 400px;
+        width: 400px;
+    }
+    .right{
+        margin-top: 90px;
+        text-align: center;
+    }
+    .round_square{
+        margin-top: 10vw; margin-bottom: 50px; display: flex; justify-content: center; align-items: center; justify-content: space-between;
+        
+    }
+    .round{
+        margin-left: 14vw; height: 14vw; width: 14vw; border-radius: 100px;  border: 2px solid white; display: flex; justify-content: center; align-items: center;
+    }
+    .image{
+        object-fit: cover; height: 7vw; width: 5vw; border-radius: 10px;
+    }
+    .middle-right{
+        height: 30vw; width: 43vw; border: 1px solid white; text-align: start; padding: 10px;
+    }
+    .image1{
+        object-fit: cover; height: 7vw; width: 5vw; border-radius: 10px;
+    }
+    .middle-right1{
+        height: 30vw; width: 43vw; border: 1px solid white; text-align: start; padding: 10px;
+    }
+    .card1{
+        cursor: pointer;  height: 15vw; width: 23vw; border: 2px solid #dcc9c9;  transition: box-shadow 0.3s ease;
+    }
+    .card2{
+        cursor: pointer;  height: 15vw; width: 23vw; border: 2px solid #f4d063;  transition: box-shadow 0.3s ease;
+    }
+    .card21{
+        cursor: pointer;  height: 15vw; width: 23vw; border: 2px solid #28efec;  transition: box-shadow 0.3s ease;
+    }
+    .card22{
+        cursor: pointer;  height: 15vw; width: 23vw; border: 2px solid #91ed20;  transition: box-shadow 0.3s ease;
+    }
+    .card1:hover {
+    box-shadow: -7px 0 10px #dcc9c9, /* Shadow on the left side */
+                7px 0 10px #dcc9c9;  /* Shadow on the right side */
+   }
+    .card2:hover {
+    box-shadow: -7px 0 10px #f4d063, /* Shadow on the left side */
+                7px 0 10px #f4d063;  /* Shadow on the right side */
+   }
+    .card21:hover {
+    box-shadow: -7px 0 10px #28efec, /* Shadow on the left side */
+                7px 0 10px #28efec;  /* Shadow on the right side */
+   }
+    .card22:hover {
+    box-shadow: -7px 0 10px #91ed20, /* Shadow on the left side */
+                7px 0 10px #91ed20;  /* Shadow on the right side */
+   }
+   
+   .card-row{
+    display: flex; justify-content: space-evenly; margin-bottom: 8vw;
+   }
+   
+   button{
+        padding: 10px 25px;
+        background-color: transparent;
+        border: 2px solid cyan;
+        color: cyan;   
+        margin-top: 5vw ;
+        margin-left: 10vw;
+        font-weight: 600;
+        position: relative;
+        transition: all linear 0.5s;
+        overflow: hidden;
+
+     }
+     button::after{
+        content: "";
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: cyan;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        transition: all linear 0.5s;
+        z-index: -1;
+     }
+
+     button:hover::after{
+        width: 100%;
+        transform: translate(-50%,-50%) scale(3);
+
+     }
+     button:hover{
+        color: #000;
+     }
+    @keyframes anime {
+        from{
+            translate: 0 0.5rem;
+        }
+        to{
+            translate: 0 0rem;
+        }
+    }
+    /* @keyframes animation {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    } */
+
+    @media screen and (max-width: 480px) {
+        .main{
+        display: block;
+        justify-content: center;
+        justify-content: space-around;
+    }
+
+    .svg{
+        height: 100vw;
+        width: 95vw;
+    
+    
+    }
+    .svg_par{
+        display: flex;
+        justify-content: center;
+    
+    }
+    .right{
+        margin-top: 20px;
+        
+    }
+    .round_square{
+        display: block;
+        width: 600px;
+                margin-left: auto; 
+            margin-right: auto;
+            text-align: center; 
+    }
+    .round{
+        margin-left: 30vw; height: 40vw; width: 40vw; border-radius: 100px;  border: 2px solid white; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;
+    }
+    .image{
+        object-fit: cover; height: 14vw; width: 10vw; border-radius: 10px;
+    }
+    .middle-right{
+        height: 100vw; width: 70vw; border: 1px solid white; text-align: start; padding: 10px; margin-left: 25vw;
+    }
+    .span{
+        display: none;
+    }
+
+    .image1{
+        object-fit: cover; height: 14vw; width: 10vw; border-radius: 10px;
+    }
+    .middle-right1{
+        height: 100vw; width: 70vw; border: 1px solid white; text-align: start; padding: 10px; margin-left: 25vw;
+    }
+    .card-row{
+        display: block;
+       margin-left: 20vw;
+    
+    }
+    .card1{
+        cursor: pointer;  margin-bottom: 7vw; height: 45vw; width: 67vw; border: 2px solid #dcc9c9;  transition: box-shadow 0.3s ease;
+    }
+    .card2{
+        cursor: pointer;  margin-bottom: 7vw; height: 45vw; width: 67vw; border: 2px solid #f4d063;  transition: box-shadow 0.3s ease;
+    }
+    .card21{
+        cursor: pointer;  margin-bottom: 7vw; height: 45vw; width: 67vw; border: 2px solid #28efec;  transition: box-shadow 0.3s ease;
+    }
+    .card22{
+        cursor: pointer;  margin-bottom: 7vw; height: 45vw; width: 67vw; border: 2px solid #91ed20;  transition: box-shadow 0.3s ease;
+    }
+    .card1:hover {
+    box-shadow: -7px 0 10px #dcc9c9, /* Shadow on the left side */
+                7px 0 10px #dcc9c9;  /* Shadow on the right side */
+   }
+    .card2:hover {
+    box-shadow: -7px 0 10px #f4d063, /* Shadow on the left side */
+                7px 0 10px #f4d063;  /* Shadow on the right side */
+   }
+
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <div class="main">
+        <div class="svg_par"> 
+            <svg class="svg"   version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 245.827 245.827" xml:space="preserve" fill="#ff0000" stroke="#ff0000" stroke-width="1.7207890000000003">
+
+                <g  id="SVGRepo_bgCarrier" stroke-width="0"/>
+                
+                <g  id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <g id="SVGRepo_iconCarrier"> <g> <g> <g> <path  class="cap" style="fill:#010002;" d="M223.336,148.384l-0.137-23.527l22.628-12.662L122.576,47.195L0,113.495l49.144,28.216 l0.098,16.766l0.01,1.339l0.449-0.215c-0.518,0.703-0.85,1.426-0.84,2.149c0.039,8.246,33.326,14.772,74.41,14.548 c41.064-0.215,74.302-7.122,74.273-15.349c0-0.723-0.381-1.426-0.889-2.149l0.449,0.215v-1.339l-0.088-16.834l21.309-13.258 l0.117,20.83c-2.345,1.006-3.976,3.312-3.957,6.009c0.02,3.537,2.892,6.399,6.458,6.37c3.586-0.02,6.429-2.912,6.409-6.439 C227.332,151.657,225.691,149.371,223.336,148.384z M123.241,170.621c-36.452,0.205-66.017-3.801-66.046-8.91 c-0.029-5.11,29.496-9.399,65.949-9.585c36.462-0.205,66.017,3.781,66.037,8.881 C189.209,166.098,159.703,170.426,123.241,170.621z M195.335,127.183c-4.934-5.188-22.618-18.886-72.426-18.602 c-49.877,0.264-67.336,14.128-72.211,19.394l-0.029-4.963c0,0,14.147-21.524,72.202-21.827 c58.025-0.313,72.436,21.045,72.436,21.045L195.335,127.183z M215.755,162.199l-2.511,36.433 c7.767-12.203,14.255-7.66,14.255-7.66l-0.156-28.832C218.998,165.414,215.755,162.199,215.755,162.199z"/> </g> </g> </g> </g>
+                
+                </svg>
+                
+        </div>
+        <div class="right" >
+            <h1 style="margin-bottom: 20px;">Education</h1>
+            <h3 style="margin-bottom: 15px;">Basic Qualification and Certifications</h3>
+            <p  style="opacity: 0.5;">Lorem ipsum dolor, sit amet consectetur adipisicing <br> elit. Vero rem fuga vitae, doloribus, est <br> saepe voluptatibus non ex soluta ut aperiam beatae reprehenderit </p>
+        </div>
+
+      
+    </div>
+
+    <div style="text-align: center; margin-top: 7vw; ">
+        <h1 >Degree Pursuing</h1>
+        <div class="round_square"  >
+            <div class="round" style="">
+                    <img class="image" style="  " src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div class="middle-right" style=""> 
+                <h3>SSBT College of Engineering</h3>
+                <h5>Computer Science Engineering</h5>
+                <p style="line-height: 2rem; opacity: 0.6; opacity: 0,4;" ><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> Ut illo quos exercitationem recusandae placeat <br> <i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i>doloremque. Laudantium,<span class="span"> saepe! Ab earum iste libero accusamus <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> porro, excepturi adipisci quod natus eveniet, in sit saepe sed <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> rem impedit non iure pariatur maiores repudiandae, ad vitae possimus <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> tempore. Minima commodi repellat laboriosam exercitationem sapiente, <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> sit fuga doloremque reiciendis quas iure nulla autem ullam? Excepturi, atque.<br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> sit fuga doloremque reiciendis quas iure nulla autem ullam? Excepturi, atque. </span></p>
+                <button style="position: fixed; bottom: 20; right: 20;">Visit Website</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="text-align: center; margin-top: 7vw;  margin-bottom: 10vw;">
+        <h1>Degree Completed</h1>
+        <div class="round_square"  >
+            <div class="round" style="">
+                    <img class="image1" style="  " src="https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div class="middle-right1" style=""> 
+                <h3>M.J.College</h3>
+                <h5>12th Science</h5>
+                <p style="line-height: 2rem; opacity: 0.6; opacity: 0,4;" ><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> Ut illo quos exercitationem recusandae placeat <br> <i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i>doloremque. Laudantium,<span class="span"> saepe! Ab earum iste libero accusamus <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> porro, excepturi adipisci quod natus eveniet, in sit saepe sed <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> rem impedit non iure pariatur maiores repudiandae, ad vitae possimus <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> tempore. Minima commodi repellat laboriosam exercitationem sapiente, <br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> sit fuga doloremque reiciendis quas iure nulla autem ullam? Excepturi, atque.<br><i class="fa-solid fa-fire" style="color: #f9911a; margin-right: 1vw;"></i> sit fuga doloremque reiciendis quas iure nulla autem ullam? Excepturi, atque. </span></p>
+                <button style="position: fixed; bottom: 20; right: 20;">Visit Website</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div> 
+            <h1 style="text-align: center; margin-bottom: 5vw;">Certificates</h1>
+        </div>
+       <div class="card-row" >
+            <div class="card2" >
+                <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #f4d063; border-bottom:2px solid white;"><img style="height: 80%; width: 50%; object-fit: cover;" src="/images/768px-Amazon_Web_Services_Logo.svg.png" alt=""></div>
+                <div style="text-align: center; margin-top: 1vw;">
+                    <h5>AWS Certification</h5>
+                    <p style="line-height: 20px;"><span class="span">Completed the course of AWS</span> </p>
+                </div>
+            </div>
+            <div class="card21"  >
+                <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #28efec; border-bottom:2px solid white;"><img style="height: 90%; width: 50%; object-fit: cover;" src="/images/logo-mysql-170x115.png" alt=""></div>
+                <div style="text-align: center; margin-top: 1vw;">
+                    <h5>MySQL Certification</h5>
+                    <p style="line-height: 20px;"><span class="span">Completed the course of MySQL Database</span> </p>
+                </div>
+            </div>
+            <div class="card22"  >
+                <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #91ed20; border-bottom:2px solid white ;"><img style="height: 60%; width: 50%; object-fit: cover;" src="/images/sih2.png" alt=""></div>
+                <div style="text-align: center; margin-top: 1vw;">
+                    <h5>SIH Participation</h5>
+                    <p style="line-height: 20px;"><span class="span">Participated in Internal Hackathon</span></p>
+                </div>
+            </div>
+          
+       </div>
+       <div class="card-row" style="">
+        <div class="card1" style=" ">
+            <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #dcc9c9; border-bottom:2px solid white ;"><img style="height: 60%; width: 50%; object-fit: cover;" src="https://classpro-profile-images.s3.amazonaws.com/data/1653/logo/logo.png?1616739472" alt=""></div>
+            <div style="text-align: center;">
+                <h5>C Programing</h5>
+                <p style="line-height: 20px;"><span class="span">Completed the course of C programming language</span></p>
+            </div>
+        </div>
+        <div class="card1" style="">
+            <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #dcc9c9; border-bottom:2px solid white ;"><img style="height: 60%; width: 50%; object-fit: cover;" src="https://classpro-profile-images.s3.amazonaws.com/data/1653/logo/logo.png?1616739472" alt=""></div>
+            <div style="text-align: center;">
+                <h5>C++ Programing</h5>
+                <p style="line-height: 20px;"><span class="span">Completed the course of C++ programming language</span> </p>
+            </div>
+        </div>
+        <div class="card1" style="">
+            <div style="display: flex; justify-content: center; align-items: center; height: 60%; width: 100%; background: #dcc9c9; border-bottom:2px solid white ;"><img style="height: 60%; width: 50%; object-fit: cover;" src="https://classpro-profile-images.s3.amazonaws.com/data/1653/logo/logo.png?1616739472" alt=""></div>
+            <div style="text-align: center;">
+                <h5>Java Programing</h5>
+                <p style="line-height: 20px;"><span class="span">Completed the course of Java programming language</span> </p>
+            </div>
+        </div>
+        
+   </div>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/javascripts/script.js"></script>
+
+</body>
+</html>
+
+<%- include('./partials/footer.ejs') %>
